@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".calculator">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calConstraint"
+        android:layout_width="370dp"
+        android:layout_height="386dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/six"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickSixButton"
+            android:text="@string/six"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/nine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/five"
+            app:layout_constraintTop_toBottomOf="@+id/three" />
+
+        <Button
+            android:id="@+id/four"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickFourButton"
+            android:text="@string/four"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/seven"
+            app:layout_constraintEnd_toStartOf="@+id/five"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/one" />
+
+        <Button
+            android:id="@+id/five"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickFiveButton"
+            android:text="@string/five"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/eight"
+            app:layout_constraintEnd_toStartOf="@+id/six"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/four"
+            app:layout_constraintTop_toBottomOf="@+id/two" />
+
+        <TextView
+            android:id="@+id/input"
+            android:layout_width="270dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/cal_display"
+            android:textAlignment="textEnd"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/three"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickThreeButton"
+            android:text="@string/three"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/six"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/two"
+            app:layout_constraintTop_toBottomOf="@+id/input" />
+
+        <Button
+            android:id="@+id/one"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickOneButton"
+            android:text="@string/one"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/four"
+            app:layout_constraintEnd_toStartOf="@+id/two"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input" />
+
+        <Button
+            android:id="@+id/two"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickTwoButton"
+            android:text="@string/two"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/five"
+            app:layout_constraintEnd_toStartOf="@+id/three"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/one"
+            app:layout_constraintTop_toBottomOf="@+id/input" />
+
+        <Button
+            android:id="@+id/seven"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickSevenButton"
+            android:text="@string/seven"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/add"
+            app:layout_constraintEnd_toStartOf="@+id/eight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/four" />
+
+        <Button
+            android:id="@+id/eight"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickEightButton"
+            android:text="@string/eight"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/zero"
+            app:layout_constraintEnd_toStartOf="@+id/nine"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/seven"
+            app:layout_constraintTop_toBottomOf="@+id/five" />
+
+        <Button
+            android:id="@+id/nine"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickNineButton"
+            android:text="@string/nine"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/subtract"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/eight"
+            app:layout_constraintTop_toBottomOf="@+id/six" />
+
+        <Button
+            android:id="@+id/add"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickAddButton"
+            android:text="@string/add"
+            app:backgroundTint="?android:attr/colorFocusedHighlight"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/multi"
+            app:layout_constraintEnd_toStartOf="@+id/zero"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seven" />
+
+        <Button
+            android:id="@+id/zero"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickZeroButton"
+            android:text="@string/zero"
+            app:backgroundTint="@color/design_default_color_secondary_variant"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/multi"
+            app:layout_constraintEnd_toStartOf="@+id/subtract"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/add"
+            app:layout_constraintTop_toBottomOf="@+id/eight" />
+
+        <Button
+            android:id="@+id/subtract"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="clickSubtractButton"
+            android:text="@string/subtract"
+            app:backgroundTint="?android:attr/colorFocusedHighlight"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/equal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/zero"
+            app:layout_constraintTop_toBottomOf="@+id/nine" />
+
+        <Button
+            android:id="@+id/equal"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="clickEqualsButton"
+            android:text="@string/clear"
+            app:backgroundTint="@android:color/holo_green_dark"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toBottomOf="@id/calConstraint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toEndOf="@+id/multi"
+            app:layout_constraintTop_toBottomOf="@id/zero" />
+
+        <Button
+            android:id="@+id/multi"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="clickCancelButton"
+            android:text="@string/multiply"
+            app:backgroundTint="@android:color/holo_red_dark"
+            app:cornerRadius="36dp"
+            app:layout_constraintBottom_toBottomOf="@id/calConstraint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zero" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
