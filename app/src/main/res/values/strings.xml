@@ -5,7 +5,12 @@
     <string name="name">Aarzoo Bansal</string>
     <string name="about_me_btn">About Me!</string>
     <string name="calculator_btn">Calculator</string>
-    <string name="contacts_btn">Add Contacts</string>
+    <string name="contacts_btn">Contacts Collector</string>
+    <string name="contacts_collector_title">Contacts Collector</string>
+    <string name="user_name">Contact Name</string>
+    <string name="user_contact">Contact Number</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="add_contacts_">Add Contact</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>

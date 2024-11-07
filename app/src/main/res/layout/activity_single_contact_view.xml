@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/_5sdp"
+    android:backgroundTint="@color/white"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="76dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_image"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/baseline_person_3_24" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:elegantTextHeight="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/user_name"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/user_number"
+            android:layout_width="320dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="67dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="-1dp"
+            android:elegantTextHeight="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/user_contact" />
+
+
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>

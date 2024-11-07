@@ -13,6 +13,9 @@
         android:theme="@style/Theme.NUMADFa24_AarzooBansal"
         tools:targetApi="31">
         <activity
+            android:name=".addContacts"
+            android:exported="false" />
+        <activity
             android:name=".contactsCollector"
             android:exported="false" />
         <activity
