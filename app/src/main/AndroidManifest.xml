@@ -13,10 +13,13 @@
         android:theme="@style/Theme.NUMADFa24_AarzooBansal"
         tools:targetApi="31">
         <activity
+            android:name=".EditContactInfo"
+            android:exported="false" />
+        <activity
             android:name=".contactCollector2"
             android:exported="false" />
         <activity
-            android:name=".AddContacts2"
+            android:name=".AddContacts"
             android:exported="false" />
         <activity
             android:name=".addContacts"

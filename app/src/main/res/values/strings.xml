@@ -15,7 +15,9 @@
     <string name="user_alternate_phone_hint">Alternate Phone No.</string>
     <string name="user_email_hint">Email</string>
     <string name="edit_contact">Edit</string>
+    <string name="edit_contact_toolbar">Edit Contact</string>
     <string name="delete_contact">Delete</string>
+    <string name="save_contact">Save</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>

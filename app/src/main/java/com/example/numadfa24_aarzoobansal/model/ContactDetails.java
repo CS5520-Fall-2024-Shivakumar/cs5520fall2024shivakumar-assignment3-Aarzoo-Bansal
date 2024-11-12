@@ -1,13 +1,5 @@
 package com.example.numadfa24_aarzoobansal.model;
 
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
-
-import android.util.Log;
-import android.util.Log;
-
-import java.util.Arrays;
-import java.util.List;
-
 
 public class ContactDetails {
 
@@ -24,10 +16,6 @@ public class ContactDetails {
         this.email = email;
         this.phoneNo = phoneNo;
         this.alternatePhone = alternatePhone;
-        Log.println(Log.INFO, "Contact details list: name " , this.name);
-        Log.println(Log.INFO, "Contact details list: email " , this.email);
-        Log.println(Log.INFO, "Contact details list: phone " , this.phoneNo);
-        Log.println(Log.INFO, "Contact details list: alternate phone " , this.alternatePhone);
     }
 
     public int getContactId(){

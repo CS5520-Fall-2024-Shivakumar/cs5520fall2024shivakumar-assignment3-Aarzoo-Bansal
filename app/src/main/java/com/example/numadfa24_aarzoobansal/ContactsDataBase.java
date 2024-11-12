@@ -5,10 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.Toast;
+
 
 import androidx.annotation.Nullable;
+
+import com.example.numadfa24_aarzoobansal.model.ContactDetails;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactsDataBase extends SQLiteOpenHelper {
 
@@ -65,11 +69,43 @@ public class ContactsDataBase extends SQLiteOpenHelper {
 
    public int deleteRecord(String contactId){
        SQLiteDatabase db = this.getWritableDatabase();
-
        String whereClause =  FinalDatabaseValues.COLUMN_ID + " = ?";
        String[] whereArgs = new String[] { contactId };
        int deleteRows = db.delete(FinalDatabaseValues.TABLE_NAME, whereClause, whereArgs);
        db.close();
        return deleteRows;
+    }
+
+    public ArrayList<ContactDetails> fetchParticularData (int contactId){
+        ArrayList<ContactDetails> userInfo = new ArrayList<>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String fetchQuery = "SELECT * from " + FinalDatabaseValues.TABLE_NAME +" WHERE " + FinalDatabaseValues.COLUMN_ID + " = " + contactId;
+
+        Cursor cursor = null;
+        if( db != null){
+            cursor = db.rawQuery(fetchQuery, null);
+            while(cursor.moveToNext()){
+                userInfo.add(new ContactDetails(contactId, cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
+            }
+            cursor.close();
+            db.close();
+        }
+        return userInfo;
+    }
+
+    public int updateRecord (String contactId, String userName, String userPhone, String userAlternatePhone, String userEmail){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(FinalDatabaseValues.COLUMN_NAME, userName);
+        values.put(FinalDatabaseValues.COLUMN_Phone, userPhone);
+        values.put(FinalDatabaseValues.COLUMN_EMAIL, userEmail);
+        values.put(FinalDatabaseValues.COLUMN_ALTERNATE, userAlternatePhone);
+
+        int rows = db.update(FinalDatabaseValues.TABLE_NAME, values, FinalDatabaseValues.COLUMN_ID + " = ?",
+                new String[] { contactId});
+        db.close();
+        return rows;
     }
 }

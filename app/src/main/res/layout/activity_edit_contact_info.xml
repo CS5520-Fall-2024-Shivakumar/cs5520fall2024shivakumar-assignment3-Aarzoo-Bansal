@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditContactInfo">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/editContactsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:title="@string/edit_contact_toolbar"
+        app:titleTextColor="@color/white" />
+
+    <EditText
+        android:id="@+id/editUserName"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:drawablePadding="@dimen/_7sdp"
+        android:ems="10"
+        android:hint="@string/user_name_hint"
+        android:inputType="text"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/editUserPhoneNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editContactsToolbar" />
+
+    <EditText
+        android:id="@+id/editUserPhoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/baseline_smartphone_24"
+        android:drawablePadding="@dimen/_7sdp"
+        android:ems="10"
+        android:hint="@string/user_phone_hint"
+        android:inputType="phone"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/editAlternatePhoneNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUserName" />
+
+    <EditText
+        android:id="@+id/editAlternatePhoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/baseline_phone_iphone_24"
+        android:drawablePadding="@dimen/_7sdp"
+        android:ems="10"
+        android:hint="@string/user_alternate_phone_hint"
+        android:inputType="phone"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/userEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUserPhoneNo" />
+
+    <EditText
+        android:id="@+id/userEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:drawablePadding="@dimen/_7sdp"
+        android:ems="10"
+        android:hint="@string/user_email_hint"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/saveContactDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAlternatePhoneNo" />
+
+    <Button
+        android:id="@+id/saveContactDetails"
+        android:layout_width="229dp"
+        android:layout_height="60dp"
+        android:drawableStart="@drawable/baseline_person_add_24"
+        android:onClick="saveContact"
+        android:text="@string/save_contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEmailAddress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

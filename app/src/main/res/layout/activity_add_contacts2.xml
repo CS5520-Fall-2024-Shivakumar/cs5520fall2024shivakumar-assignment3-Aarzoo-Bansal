@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddContacts2">
+    tools:context=".AddContacts">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/addContactstoolbar2"
+        android:id="@+id/editContactsToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -24,7 +24,7 @@
 
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/editUserName"
         style="@android:style/Widget.Material.Light.AutoCompleteTextView"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -34,14 +34,14 @@
         android:hint="@string/user_name_hint"
         android:inputType="text"
         android:padding="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@+id/userPhoneNo"
+        app:layout_constraintBottom_toTopOf="@+id/editUserPhoneNo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addContactstoolbar2" />
+        app:layout_constraintTop_toBottomOf="@+id/editContactsToolbar" />
 
     <EditText
-        android:id="@+id/userPhoneNo"
+        android:id="@+id/editUserPhoneNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/baseline_smartphone_24"
@@ -50,14 +50,14 @@
         android:hint="@string/user_phone_hint"
         android:inputType="phone"
         android:padding="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@+id/alternatePhoneNo"
+        app:layout_constraintBottom_toTopOf="@+id/editAlternatePhoneNo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
+        app:layout_constraintTop_toBottomOf="@+id/editUserName" />
 
     <EditText
-        android:id="@+id/alternatePhoneNo"
+        android:id="@+id/editAlternatePhoneNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/baseline_phone_iphone_24"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPhoneNo" />
+        app:layout_constraintTop_toBottomOf="@+id/editUserPhoneNo" />
 
     <EditText
         android:id="@+id/userEmailAddress"
@@ -82,13 +82,13 @@
         android:hint="@string/user_email_hint"
         android:inputType="textEmailAddress"
         android:padding="@dimen/_12sdp"
-        app:layout_constraintBottom_toTopOf="@+id/addContactDetails"
+        app:layout_constraintBottom_toTopOf="@+id/saveContactDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alternatePhoneNo" />
+        app:layout_constraintTop_toBottomOf="@+id/editAlternatePhoneNo" />
 
     <Button
-        android:id="@+id/addContactDetails"
+        android:id="@+id/saveContactDetails"
         android:layout_width="229dp"
         android:layout_height="60dp"
         android:drawableStart="@drawable/baseline_person_add_24"

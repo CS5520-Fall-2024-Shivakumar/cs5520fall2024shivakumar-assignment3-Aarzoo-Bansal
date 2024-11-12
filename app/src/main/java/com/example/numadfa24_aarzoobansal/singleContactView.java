@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class singleContactView extends AppCompatActivity {
 
-    private ContactsCollector contact;
     TextView contactId;
 
     @Override
@@ -18,8 +17,6 @@ public class singleContactView extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.single_contact_recycler_view_row);
 
-
-        contact = new ContactsCollector();
         contactId = findViewById(R.id.contactId);
         contactId.setVisibility(View.INVISIBLE);
     }

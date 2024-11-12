@@ -8,7 +8,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -55,30 +54,23 @@ public class ContactsCollector extends AppCompatActivity {
 
         //This is to launch the create contacts activity once the fab button is clicked
         addContactsFab.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AddContacts2.class);
+            Intent intent = new Intent(this, AddContacts.class);
             startActivity(intent);
         });
     }
 
 
-    public void initializeData(){
+    public void initializeData() {
         Cursor cursor = db.readAllData();
 
-        Log.println(Log.WARN, "datacount" ,"hello11222 " +String.valueOf(cursor.getCount()));
-
-        if(cursor.getCount() == 0){
-            Toast.makeText(this, "No data has been entered yet" , Toast.LENGTH_SHORT).show();
-        }else{
-            List<ContactDetails> contactList = new ArrayList<>();
-            while (cursor.moveToNext()){
-                Log.println(Log.INFO, "datacount id of data", cursor.getString(0));
-                contactList.add(new ContactDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)) );
-            }
-
-            contactAdapter = new ContactAdapter(this, contactList, this);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            recyclerView.setAdapter(contactAdapter);
+        List<ContactDetails> contactList = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            contactList.add(new ContactDetails(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
         }
+
+        contactAdapter = new ContactAdapter(this, contactList, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(contactAdapter);
     }
 
     @Override
@@ -98,13 +90,23 @@ public class ContactsCollector extends AppCompatActivity {
     }
 
     public void onContactDelete(int contactId) {
-       int rows =  db.deleteRecord(String.valueOf(contactId));
-       if(rows > 0){
-           initializeData();
-           Snackbar.make(findViewById(R.id.contactListRecyclerView), "Contact deleted", Snackbar.LENGTH_SHORT).show();
-       }
+        int rows = db.deleteRecord(String.valueOf(contactId));
+        if (rows > 0) {
+            initializeData();
+            Snackbar.make(findViewById(R.id.contactListRecyclerView), "Contact deleted", Snackbar.LENGTH_SHORT).show();
+        }
     }
 
-    public void onContactEdit(int contactId){}
+    public void onContactEdit(int contactId) {
+        ArrayList<ContactDetails> contactInfo = db.fetchParticularData(contactId);
+        Intent intent = new Intent(this, EditContactInfo.class);
+        intent.putExtra("contactID", String.valueOf(contactId));
+        intent.putExtra("userName", contactInfo.get(0).getName());
+        intent.putExtra("userPhoneNo", contactInfo.get(0).getPhoneNo());
+        intent.putExtra("userAlternatePhoneNo", contactInfo.get(0).getAlternatePhone());
+        intent.putExtra("userEmail", contactInfo.get(0).getEmail());
+
+        startActivity(intent);
+    }
 
 }
