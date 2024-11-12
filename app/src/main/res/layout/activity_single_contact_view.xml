@@ -16,44 +16,70 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/contact_image"
-            android:layout_width="66dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+
             android:padding="@dimen/_5sdp"
             android:src="@drawable/baseline_person_3_24" />
 
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="320dp"
-            android:layout_height="36dp"
-            android:layout_alignParentStart="true"
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="67dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="10dp"
-            android:elegantTextHeight="true"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/user_name"
-            android:textStyle="bold" />
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            app:srcCompat="@drawable/baseline_mode_edit_24" />
 
-        <TextView
-            android:id="@+id/user_number"
-            android:layout_width="320dp"
-            android:layout_height="36dp"
-            android:layout_alignParentStart="true"
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="67dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="-1dp"
-            android:elegantTextHeight="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/baseline_delete_24" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="291dp"
+            android:layout_height="39dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_toStartOf="@+id/imageButton3"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/user_contact" />
+            android:text="@string/user_name"
+            android:textStyle="bold"
+             />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="289dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toStartOf="@+id/imageButton4"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/user_contact"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
-
-
 
 
 </androidx.cardview.widget.CardView>

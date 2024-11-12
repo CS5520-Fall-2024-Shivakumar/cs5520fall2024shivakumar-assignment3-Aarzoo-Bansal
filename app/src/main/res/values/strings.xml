@@ -10,7 +10,12 @@
     <string name="user_name">Contact Name</string>
     <string name="user_contact">Contact Number</string>
     <string name="add_contact">Add Contact</string>
-    <string name="add_contacts_">Add Contact</string>
+    <string name="user_name_hint">Name (Required)</string>
+    <string name="user_phone_hint">Phone No. (Required)</string>
+    <string name="user_alternate_phone_hint">Alternate Phone No.</string>
+    <string name="user_email_hint">Email</string>
+    <string name="edit_contact">Edit</string>
+    <string name="delete_contact">Delete</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>

@@ -9,7 +9,7 @@
     tools:context=".addContacts">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/addContactstoolbar"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -21,6 +21,19 @@
         app:navigationIcon="@drawable/baseline_arrow_back_ios_new_24"
         app:title="@string/add_contact"
         app:titleTextColor="@color/white" />
+    <ImageButton
+        android:id="@+id/backButtonAddContacts"
+        android:layout_width="34dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/addContactstoolbar"
+        app:layout_constraintEnd_toEndOf="@+id/addContactstoolbar"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_new_24" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -34,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/addContactstoolbar"
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
@@ -54,10 +67,10 @@
             android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="@dimen/_7sdp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="@string/user_name_hint"
             android:inputType="text"
             android:padding="@dimen/_14sdp"
-            app:layout_marginTop="23dp" />
+             />
 
         <EditText
             android:id="@+id/userPhoneNo"
@@ -67,7 +80,7 @@
             android:drawableStart="@drawable/baseline_smartphone_24"
             android:drawablePadding="@dimen/_7sdp"
             android:ems="10"
-            android:hint="Phone No."
+            android:hint="@string/user_phone_hint"
             android:inputType="phone"
             android:padding="@dimen/_14sdp" />
 
@@ -79,21 +92,33 @@
             android:drawableStart="@drawable/baseline_phone_iphone_24"
             android:drawablePadding="@dimen/_7sdp"
             android:ems="10"
-            android:hint="Alternate Phone No."
+            android:hint="@string/user_alternate_phone_hint"
             android:inputType="phone"
             android:padding="@dimen/_14sdp" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/userEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="@dimen/_7sdp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/user_email_hint"
             android:inputType="textEmailAddress"
             android:padding="@dimen/_14sdp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+
+        </ScrollView>
 
 
     </LinearLayout>
@@ -104,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="156dp"
         android:drawableStart="@drawable/baseline_person_add_24"
+        android:onClick="addContactDetails"
         android:text="@string/add_contact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
